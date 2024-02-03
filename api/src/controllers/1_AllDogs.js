@@ -1,39 +1,69 @@
-const { Dogs, Breeds } = require("../db");
+const { Dogs, Temperaments } = require("../db");
 const { YOUR_API_KEY } = process.env;
 const axios = require("axios");
 
-const URL = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
+const URL = `https://api.thedogapi.com/v1/breeds/?key=${YOUR_API_KEY}`;
+
+// const getAllDogs = async() => {
+    
+//     const response = await axios.get(URL, {
+//         headers: {
+//             'x-api-key': YOUR_API_KEY,
+//         },
+//     });
+
+//     const data = response.data;
+
+//     const dogs = data.map((dog) => ({
+
+//         imagen: dog.reference_image_id || "",
+//         name: dog.name || "",
+//         height: dog.height || "",
+//         weight: dog.weight || "",
+//         years: dog.life_span || "",
+//         temperaments: (dog.temperaments || []).map((t) => ({ name: t.name })),
+
+//     }));
+
+//     const dogsDB = await Dogs.findAll({
+//         include: {
+//             model: Temperaments,
+//             attributes: ["name"],
+//             through: {
+//                 attributes: [],
+//             },
+//         },
+//     });
+//     return [...dogsDB, ...dogs];
+// }
+// module.exports = getAllDogs;
 
 const getAllDogs = async() => {
     
-    const data = (await axios.get(URL)).data.results;
+    const response = await axios.get(URL);
+
+    const data = response.data;
 
     const dogs = data.map((dog) => ({
 
-        name: game.name,
-        descripcion: game.slug,
-        plataformas: game.platforms.map((platform) => ({ name: platform.platform.name })),
-        imagen: game.background_image,
-        released: game.released,
-        rating: game.rating,
-        genres: game.genres.map((genre) => ({ name: genre.name })),
+        imagen: dog.reference_image_id || "",
+        name: dog.name || "",
+        height: dog.height.imperial || "",
+        weight: dog.weight.imperial || "",
+        years: dog.life_span || "",
+        temperaments: dog.temperament
 
     }));
 
     const dogsDB = await Dogs.findAll({
         include: {
-            model: Genres,
-            attributes: ["name"],
+            model: Temperaments,
+            attributes: ["temperament"],
             through: {
                 attributes: [],
             },
         },
     });
-
-  
-
-
-    return [...videogamesDB, ...videogames];
-    
+    return [...dogsDB, ...dogs];
 }
-module.exports = getAllVideogames;
+module.exports = getAllDogs;

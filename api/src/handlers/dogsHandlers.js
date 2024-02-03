@@ -1,4 +1,4 @@
-const getAllDogs = require('../controllers/AllDogs')
+const getAllDogs = require('../controllers/1_AllDogs')
 const getIdDogs = require('../controllers/2_IdDogs');
 const getAddDogs = require('../controllers/4_AddDogs');
 
@@ -25,6 +25,8 @@ exports.idDogs = async (req, res) => {
 };
 
 exports.addDogs = async (req, res) => {
+    const {  imagen, name, height, weight, years, temperament } = req.body
+    const dogsData = {  imagen, name, height, weight, years, temperament }
    
     try {
         const response = await getAddDogs(dogsData)

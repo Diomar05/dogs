@@ -23,27 +23,27 @@ module.exports = (sequelize) => {
       height: {
         type: DataTypes.INTEGER,
         defaultValue: 0,
-        validate: {
-          min: 0,
-          max: 999,
-        },
+        // validate: {
+        //   min: 0,
+        //   max: 999,
+        // },
       },
 
       weight: {
         type: DataTypes.INTEGER,
         defaultValue: 0,
-        validate: {
-          min: 0,
-          max: 999,
-        },
+        // validate: {
+        //   min: 0,
+        //   max: 999,
+        // },
 
         years: {
           type: DataTypes.INTEGER,
           defaultValue: 0,
-          validate: {
-            min: 0,
-            max: 999,
-          },
+          // validate: {
+          //   min: 0,
+          //   max: 100,
+          // },
         },
       },
     },
