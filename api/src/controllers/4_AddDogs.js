@@ -1,4 +1,4 @@
-const { Dogs, Temperaments } = require('../db')
+const { Dogs, Temperament } = require('../db')
 
 const getAddDogs = async (dogsData) => {
     // Obtengo los datos necesarios para crear el perrito
@@ -25,7 +25,7 @@ const getAddDogs = async (dogsData) => {
     });
 
     // Agrego el temperamento al perrito
-    const temperamentsFound = await Temperaments.findAll({
+    const temperamentsFound = await Temperament.findAll({
         where: { temperament: temperament },
       });
   

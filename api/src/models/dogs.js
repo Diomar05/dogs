@@ -12,8 +12,7 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4,
       },
       imagen: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.STRING
       },
       name: {
         type: DataTypes.STRING,
@@ -37,8 +36,8 @@ module.exports = (sequelize) => {
         //   max: 999,
         // },
 
-        years: {
-          type: DataTypes.INTEGER,
+        weight: {
+          type: DataTypes.STRING,
           defaultValue: 0,
           // validate: {
           //   min: 0,

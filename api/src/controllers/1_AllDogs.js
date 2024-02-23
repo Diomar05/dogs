@@ -1,4 +1,4 @@
-const { Dogs, Temperaments } = require("../db");
+const { Dogs, Temperament } = require("../db");
 const { YOUR_API_KEY } = process.env;
 const axios = require("axios");
 
@@ -46,18 +46,18 @@ const getAllDogs = async() => {
 
     const dogs = data.map((dog) => ({
 
-        imagen: dog.reference_image_id || "",
+        imagen: dog.reference_image_id ? `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg` : '../../../client/src/assets/default.jpg' || "",
         name: dog.name || "",
         height: dog.height.imperial || "",
         weight: dog.weight.imperial || "",
         years: dog.life_span || "",
-        temperaments: dog.temperament
+        temperament: dog.temperament
 
     }));
 
     const dogsDB = await Dogs.findAll({
         include: {
-            model: Temperaments,
+            model: Temperament,
             attributes: ["temperament"],
             through: {
                 attributes: [],

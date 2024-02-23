@@ -1,0 +1,34 @@
+.mainContainer {
+  display: grid;
+  grid-template-areas:
+    "navbar"
+    "sidebar"
+    "paginacion"
+    "dogs";
+  grid-template-columns: 100%;
+  grid-template-rows: 90px 60px 30px auto;
+
+}
+
+.nav {
+  grid-area: navbar;
+  height: 30px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 30px;
+
+}
+
+.paginacion {
+  grid-area: paginacion;
+  height: 30px;
+  
+
+}
+
+.dogs {
+  grid-area: dogs;
+    
+}

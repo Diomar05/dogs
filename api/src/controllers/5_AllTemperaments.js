@@ -1,4 +1,4 @@
-const { Temperaments } = require("../db");
+const { Temperament } = require("../db");
 const axios = require("axios");
 
 const { YOUR_API_KEY } = process.env;
@@ -7,7 +7,7 @@ const URL = `https://api.thedogapi.com/v1/breeds/?key=${YOUR_API_KEY}`;
 
 exports.getAllTemperaments = async () => {
 
-  const count = await Temperaments.count();
+  const count = await Temperament.count();
   
   if (count === 0) {
   
@@ -28,11 +28,11 @@ exports.getAllTemperaments = async () => {
 
     console.log(uniqueTemperaments);
 
-    return Temperaments.bulkCreate(uniqueTemperaments);
+    return Temperament.bulkCreate(uniqueTemperaments);
     
 
   } else {
-    const temperaments = await Temperaments.findAll();
+    const temperaments = await Temperament.findAll();
     //console.log(temperaments);
     return temperaments;
   }

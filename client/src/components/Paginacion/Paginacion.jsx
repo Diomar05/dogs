@@ -1,29 +1,33 @@
 import React from 'react'
+import styles from './Paginacion.module.css'
 
-const Paginacion = () => {
+const Paginacion = ({allDogs, dogsPage, paginacion, currentPage}) => {
 
-    const pageNumbers = [];
+    const pages = []
 
-    //La Division se hara de 8 perror dos columnas de 4 filas
-    const division = Math.ceil(totalPosts / itemsPorPag) 
-    
-    for (let i = 0; i < division; i++) {
-        pageNumbers.push(i);
+    for (let d = 1; d <= Math.ceil(allDogs/dogsPage); d++) {
+        pages.push(d);
+        
     }
 
-    return (
-        <div>
-            <div>
-                {pageNumbers.map(number => (
-                    <div>
-                        <button className= "boton-paginador" onClick={() => paginate(number)}>
-                            {number}
-                        </button>
-                    </div>
+    return ( 
+        <nav>
+            <ul className={styles.list}>
+                {pages && pages.map(number=> (
+                    <li>
+                        <div
+                        className={
+                            currentPage === number ? styles.crumb__active : styles.crumb }
+                            onClick={()=> paginacion(number)}
+                        >
+                        {number}
+                        </div>
+                    </li>
                 ))}
-            </div>
-        </div>
-    )
+                
+            </ul>
+        </nav>
+     );
 }
-
+ 
 export default Paginacion;

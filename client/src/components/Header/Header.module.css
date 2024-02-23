@@ -1,0 +1,62 @@
+.container {
+    /* display: flex; 
+    justify-content: space-between;  */
+    align-items: center;
+    background-color: #0c4cdc;
+    display: grid;
+    grid-template-areas:
+      "buttons title search"
+      ;
+    grid-template-columns: 46% 31% 23%;
+  }
+
+  .containerbuttons{
+    grid-area: buttons;
+    padding-left: 5px;
+
+  }
+
+  .containerTitulo{
+    grid-area: title;
+  }
+
+  .containersearch{
+    grid-area: search;
+    padding-right: 10px;
+
+  }
+
+  .button{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    padding: 10px;
+    margin: 5px;
+    width: 15%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px #29c0ce; 
+   
+    &:active{
+      transform: scale(0.9);
+      background-color: darken(button-bg, 5%);
+      box-shadow: 0 2px 25px #29c0ce;
+    }
+    
+    }
+
+  .button:hover{
+    transition: (0,5s);
+    background-color: #29c0ce;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .link{
+    text-decoration: none;
+  }
+ 
+  
+

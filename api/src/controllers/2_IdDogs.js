@@ -1,4 +1,4 @@
-const { Dogs, Temperaments } = require('../db')
+const { Dogs, Temperament } = require('../db')
 const { YOUR_API_KEY } = process.env;
 const axios = require("axios");
 const cleanDogs = require ('../utils/index')
@@ -38,7 +38,7 @@ const getIdDogs = async (id, source) => {
       // Si la fuente es la base de datos local
       const dbDogs = await Dogs.findByPk(id, {
         include: {
-          model: Temperaments,
+          model: Temperament,
           attributes: ['temperament'],
           through:{
             attributes: [],
