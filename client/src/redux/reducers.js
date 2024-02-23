@@ -1,4 +1,4 @@
-import { GET_DOGS, GET_DOGS_BY_NAME } from './actions'
+import { GET_DOGS_BY_NAME } from './actions'
 
 const initialState = {
   dogs: [],

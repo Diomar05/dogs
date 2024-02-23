@@ -15,7 +15,7 @@ const Paginacion = ({allDogs, dogsPage, paginacion, currentPage}) => {
             <ul className={styles.list}>
                 {pages && pages.map(number=> (
                     <li>
-                        <div
+                        <div 
                         className={
                             currentPage === number ? styles.crumb__active : styles.crumb }
                             onClick={()=> paginacion(number)}

@@ -9,7 +9,7 @@ const Header = () => {
     <div className={styles.container}>
       <div className={styles.containerbuttons}>
         <button className={styles.button}>
-          <NavLink to='/' className={styles.link}>Home</NavLink>
+          <NavLink to='/home' className={styles.link}>Home</NavLink>
         </button>
         <button className={styles.button}>
           <NavLink className={styles.link}>Create</NavLink>
@@ -19,7 +19,7 @@ const Header = () => {
         </button>
       </div>
       <div className={styles.containerTitulo}>
-        <img src={logo} alt="" width="220px"/>
+        <NavLink to='/'><img src={logo} alt="" width="220px"/></NavLink>
       </div>
 
       <div className={styles.containersearch}>

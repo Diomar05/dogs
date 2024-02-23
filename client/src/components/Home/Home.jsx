@@ -6,7 +6,7 @@ import Dogs from "../Dogs/Dogs";
 const Home = () => {
   return (
       <div className={styles.mainContainer}>
-        <div><Header /></div>
+        {/* <div><Header /></div> */}
         <div><Dogs /></div>
       </div>
   );

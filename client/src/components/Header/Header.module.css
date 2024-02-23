@@ -7,7 +7,8 @@
     grid-template-areas:
       "buttons title search"
       ;
-    grid-template-columns: 46% 31% 23%;
+    grid-template-columns: 42% 33% 23%;
+    
   }
 
   .containerbuttons{

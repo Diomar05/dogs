@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getDogs } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 import Paginacion from '../Paginacion/Paginacion'
+import styles from './Dogs.module.css'
 
 const Dogs = () => {
     const dispatch = useDispatch();
@@ -25,27 +26,30 @@ const Dogs = () => {
 
   return (
     <div>
-        
-
-      {dogs.map((d) => {
-        return (
-          <Dog
-            key={d.id}
-            id={d.id}
-            imagen={d.imagen}
-            name={d.name}
-            weight={d.weight}
-            temperament={d.temperament}
+      <div className={styles.containerDogs}>
+        {dogs.map((d) => {
+          return (
+            <Dog
+              key={d.id}
+              id={d.id}
+              imagen={d.imagen}
+              name={d.name}
+              weight={d.weight}
+              temperament={d.temperament}
+            />
+          );
+        })}
+  
+  
+      </div>
+      <div>
+      <Paginacion 
+              dogsPage={dogsPage}
+              allDogs={allDogs.length}
+              paginacion={paginacion}
+              currentPage={currentPage}
           />
-        );
-      })}
-
-<Paginacion 
-            dogsPage={dogsPage}
-            allDogs={allDogs.length}
-            paginacion={paginacion}
-            currentPage={currentPage}
-        />
+      </div>
     </div>
   );
 };

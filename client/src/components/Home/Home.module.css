@@ -1,3 +1,7 @@
+body{
+  background-image: url('../../assets/background3.jpg');
+}
+
 .mainContainer {
   display: grid;
   grid-template-areas:
