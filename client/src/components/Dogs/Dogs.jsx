@@ -1,5 +1,4 @@
 import React from "react";
-//import styles from './Dogs.module.css'
 import Dog from "../Dog/Dog";
 import { useEffect, useState } from "react";
 import { getDogs } from "../../redux/actions";
@@ -27,15 +26,15 @@ const Dogs = () => {
   return (
     <div>
       <div className={styles.containerDogs}>
-        {dogs.map((d) => {
+        {dogs.map((dog) => {
           return (
-            <Dog
-              key={d.id}
-              id={d.id}
-              imagen={d.imagen}
-              name={d.name}
-              weight={d.weight}
-              temperament={d.temperament}
+              <Dog
+              key={dog.id}
+              id={dog.id}
+              imagen={dog.imagen}
+              name={dog.name}
+              weight_min={dog.weight_min} weight_max={dog.weight_max}
+              temperament={dog.temperament}
             />
           );
         })}
@@ -43,7 +42,7 @@ const Dogs = () => {
   
       </div>
       <div>
-      <Paginacion 
+      <Paginacion
               dogsPage={dogsPage}
               allDogs={allDogs.length}
               paginacion={paginacion}

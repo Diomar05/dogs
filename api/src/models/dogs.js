@@ -19,32 +19,31 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
-      height: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-        // validate: {
-        //   min: 0,
-        //   max: 999,
-        // },
+      height_min:{
+        type: DataTypes.TEXT,
+        allowNull: false
       },
 
-      weight: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-        // validate: {
-        //   min: 0,
-        //   max: 999,
-        // },
-
-        weight: {
-          type: DataTypes.STRING,
-          defaultValue: 0,
-          // validate: {
-          //   min: 0,
-          //   max: 100,
-          // },
-        },
+      height_max:{
+        type: DataTypes.TEXT,
+        allowNull: false
       },
+
+      weight_min:{
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+     
+      weight_max:{
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+      
+      years:{
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+
     },
     {
       timestamps: false,

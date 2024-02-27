@@ -1,0 +1,115 @@
+.box {
+  width: 98%;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  gap: 2px;
+  box-shadow: 4px 4px 4px 2px rgba(69, 69, 69, 0.7);
+  
+
+}
+
+.container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  border-radius: 10px;
+  background-color: blue; */
+
+  width: 50%;
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  gap: 2px;
+  box-shadow: 4px 4px 4px 2px rgba(69, 69, 69, 0.7);
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.containerName{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    gap: 2px;
+    box-shadow: 4px 4px 4px 2px rgba(69, 69, 69, 0.7);
+    
+}
+
+
+.Section {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 15px;
+    gap: 2px;
+    box-shadow: 4px 4px 4px 2px rgba(69, 69, 69, 0.7);
+  }
+
+.error {
+    font-size: 10px;
+    color: red;
+  }
+
+  .button {
+    cursor: pointer;
+    line-height: 2.5;
+    width: 75px;
+    border-radius: 5px;
+  }
+  .button:hover{
+    background-color: rgb(182, 245, 36);
+    transform: scale(1.02,1.02);
+  }
+  .buttonCancel {
+    cursor: pointer;
+    line-height: 2.5;
+    width: 75px;
+    background-color: rgb(240, 29, 29);
+    color: white;
+    border-radius: 5px;
+  }
+  .buttonCancel:hover{
+    background-color: rgb(216, 78, 35);
+    transform: scale(1.02,1.02);
+  }

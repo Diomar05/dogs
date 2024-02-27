@@ -12,7 +12,7 @@ const Header = () => {
           <NavLink to='/home' className={styles.link}>Home</NavLink>
         </button>
         <button className={styles.button}>
-          <NavLink className={styles.link}>Create</NavLink>
+          <NavLink to='/create' className={styles.link}>Create</NavLink>
         </button>
         <button className={styles.button}>
           <NavLink className={styles.link}>About</NavLink>

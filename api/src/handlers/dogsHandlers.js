@@ -25,8 +25,8 @@ exports.idDogs = async (req, res) => {
 };
 
 exports.addDogs = async (req, res) => {
-    const {  imagen, name, height, weight, years, temperament } = req.body
-    const dogsData = {  imagen, name, height, weight, years, temperament }
+    const {  imagen, name, height_min, height_max, weight_min, weight_max, years, temperament } = req.body
+    const dogsData = {  imagen, name, height_min, height_max, weight_min, weight_max, years, temperament }
    
     try {
         const response = await getAddDogs(dogsData)
